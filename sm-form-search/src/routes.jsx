@@ -10,14 +10,17 @@ const router = createBrowserRouter([
       {
         path: "user/new",
         element: <AddUserPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "category/new",
         element: <AddCategoryPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "search/:term",
         element: <SearchListPage />,
+        errorElement: <ErrorPage />,
       },
     ],
   },

@@ -10,8 +10,13 @@ export default function AddCategory(props) {
   }
 
   async function handleSaveCategory() {
-    const api = new CategoryApi();
-    api.addCategory({ name: categoryName });
+    try {
+      const api = new CategoryApi();
+      api.addCategory({ name: categoryName });
+      setCategoryName("");
+    } catch(e) {
+      throw e;
+    }
   }
 
   return (
