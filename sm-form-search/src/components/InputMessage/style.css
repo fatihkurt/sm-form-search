@@ -1,0 +1,17 @@
+.input-message {
+  font-size: 12px;
+  padding: 4px 0px;
+}
+
+.input-message.error {
+  color: #b50000;
+}
+.input-message.info {
+  color: #094cc3;
+}
+.input-message.warning {
+  color: #8c7023; 
+}
+.input-message.success {
+  color: #0c830c; 
+}
