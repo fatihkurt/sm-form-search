@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { CategoryApi } from "../../api";
 
 export default function AddCategory(props) {
-
   const [categoryName, setCategoryName] = useState("");
 
   function handleCategoryNameChange(e) {
@@ -10,7 +10,8 @@ export default function AddCategory(props) {
   }
 
   async function handleSaveCategory() {
-    // ...
+    const api = new CategoryApi();
+    api.addCategory({ name: categoryName });
   }
 
   return (
@@ -20,14 +21,16 @@ export default function AddCategory(props) {
         <form className="app-form">
           <label>
             <span>Category Name</span>
-            <input 
+            <input
               type="text"
               value={categoryName}
               onChange={handleCategoryNameChange}
             />
           </label>
           <p>
-            <button type="submit" onClick={handleSaveCategory}>Save</button>
+            <button type="button" onClick={handleSaveCategory}>
+              Save
+            </button>
           </p>
         </form>
       </div>

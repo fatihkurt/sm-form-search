@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { UserApi } from "../../api"
 
 export default function AddUser() {
   const [userForm, setUserForm] = useState({
@@ -14,7 +15,19 @@ export default function AddUser() {
   }
 
   async function handleSaveUser() {
-    // ...
+    try {
+      const api = new UserApi();
+  
+      api.addUser(userForm);
+      setUserForm({
+        fullname: "",
+        country: "",
+        city: "",
+        mail: "",
+      });
+    } catch (e) {
+      throw e;
+    }
   }
 
   function renderTextField(fieldName) {
