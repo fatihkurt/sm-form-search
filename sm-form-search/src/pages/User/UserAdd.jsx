@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { UserApi } from "../../api"
-import { Input, InputMessage } from "../../components";
+import { Button, Input, InputMessage } from "../../components";
 import { useFormValidate } from "../../hooks/useFormValidate";
 import { validations } from "./validations";
 
@@ -77,9 +77,7 @@ export default function UserAdd() {
             {renderTextField("mail")}
           </label>
           <p>
-            <button type="button" onClick={handleSaveUser}>
-              Save
-            </button>
+            <Button title="Save" onClick={handleSaveUser} />
           </p>
         </form>
       </div>
