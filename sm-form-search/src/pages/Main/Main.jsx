@@ -1,24 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
+import { SearchForm } from "../../sections";
 
 export default function Main() {
   return (
     <>
       <div id="sidebar">
         <div>
-          <form id="search-form" role="search">
-            <input
-              id="q"
-              aria-label="Search"
-              placeholder="Search"
-              type="search"
-              name="q"
-            />
-            <div id="search-spinner" aria-hidden hidden={true} />
-            <div className="sr-only" aria-live="polite"></div>
-          </form>
-          <div>
-            <button type="submit">Search</button>
-          </div>
+          <SearchForm />
         </div>
         <nav>
           <ul>
