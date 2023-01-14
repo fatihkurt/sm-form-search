@@ -1,26 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AddCategoryPage, AddUserPage, ErrorPage, MainPage, SearchListPage } from "./pages";
+import { AddCategoryPage, AddUserPage, MainPage, SearchListPage } from "./pages";
+import { Error } from "./sections";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
-    errorElement: <ErrorPage />,
+    errorElement: <Error />,
     children: [
       {
         path: "user/new",
         element: <AddUserPage />,
-        errorElement: <ErrorPage />,
+        errorElement: <Error />,
       },
       {
         path: "category/new",
         element: <AddCategoryPage />,
-        errorElement: <ErrorPage />,
+        errorElement: <Error />,
       },
       {
         path: "search/:term",
         element: <SearchListPage />,
-        errorElement: <ErrorPage />,
+        errorElement: <Error />,
       },
     ],
   },
