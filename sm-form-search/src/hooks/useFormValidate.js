@@ -8,7 +8,10 @@ export function useFormValidate(formValidations) {
     if (!validations[fieldName]) {
       validations[fieldName] = [];
     }
-    setValidations({ ...validations, [fieldName]: [...validations[fieldName], rule] });
+    setValidations({
+      ...validations,
+      [fieldName]: [...validations[fieldName], rule],
+    });
   }
 
   function validate(formValues) {
@@ -29,7 +32,7 @@ export function useFormValidate(formValidations) {
   }
 
   function validateField(value, fieldName, rules, formErrors) {
-    rules.forEach(rule => validateRule(value, fieldName, rule, formErrors));
+    rules.forEach((rule) => validateRule(value, fieldName, rule, formErrors));
   }
 
   function validateRule(value, fieldName, rule, formErrors) {
@@ -75,6 +78,15 @@ export function useFormValidate(formValidations) {
               `The field must be maximum ${rule.maxLength} characters!`
           );
         }
+      case "letter":
+        if (!new RegExp(/^[A-Za-zışçüğöİŞÇÜÖ\s]*$/).test(value)) {
+          addError(
+            formErrors,
+            fieldName,
+            rule.message || "Please only use letters!"
+          );
+        }
+        break;
       default:
         break;
     }

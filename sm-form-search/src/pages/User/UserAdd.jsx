@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { UserApi } from "../../api"
-import { InputMessage } from "../../components";
+import { Input, InputMessage } from "../../components";
 import { useFormValidate } from "../../hooks/useFormValidate";
 import { validations } from "./validations";
 
@@ -45,10 +45,9 @@ export default function UserAdd() {
   function renderTextField(fieldName) {
     return (
       <div>
-        <input
-          type="text"
+        <Input
           value={userForm[fieldName]}
-          onChange={(e) => setFormField(fieldName, e.target.value)}
+          onChange={(value) => setFormField(fieldName, value)}
         />
         {errors[fieldName] && (<InputMessage type="error">{errors[fieldName][0]}</InputMessage>)}
       </div>

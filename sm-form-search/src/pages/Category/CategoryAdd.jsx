@@ -1,15 +1,8 @@
 import { useState } from "react";
 import { CategoryApi } from "../../api";
-import { InputMessage } from "../../components";
+import { Input, InputMessage } from "../../components";
 import { useFormValidate } from "../../hooks/useFormValidate";
-
-const validations = {
-  categoryName: [
-    { type: "required" },
-    { type: "minLength", minLength: 4 },
-    { type: "maxLength", maxLength: 60 },
-  ],
-};
+import { validations } from './validations'
 
 export default function CategoryAdd(props) {
   const [categoryName, setCategoryName] = useState("");
@@ -18,9 +11,8 @@ export default function CategoryAdd(props) {
 
   const [validate, errors] = useFormValidate(validations);
 
-  function handleCategoryNameChange(e) {
+  function handleCategoryNameChange(catName) {
     setFormSubmitted(false);
-    const catName = e.target.value;
     setCategoryName(catName);
   }
 
@@ -52,8 +44,7 @@ export default function CategoryAdd(props) {
           <label>
             <span>Category Name</span>
             <div>
-              <input
-                type="text"
+              <Input
                 value={categoryName}
                 onChange={handleCategoryNameChange}
               />
