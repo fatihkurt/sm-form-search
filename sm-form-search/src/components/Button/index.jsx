@@ -1,7 +1,6 @@
 import "./style.css";
 
 export default function Button(props) {
-  console.log(props);
   function handleClick(e) {
     if (props.disabled) return;
     props.onClick && props.onClick(e);

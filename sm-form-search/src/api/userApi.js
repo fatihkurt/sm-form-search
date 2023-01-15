@@ -25,21 +25,39 @@ export default class SampleUserApi {
 
 const sampleData = [
   {
-    fullname: "Naime",
+    fullname: "Naime Tan",
     country: "Turkiye",
     city: "Izmir",
     mail: "asdasdasdas@sm.com",
   },
   {
-    fullname: "Saim",
+    fullname: "Saim Zan",
     country: "Turkiye",
     city: "Izmir",
-    mail: "asdasd@sm.com",
+    mail: "bnmbnm@sm.com",
   },
   {
-    fullname: "Naim",
+    fullname: "Naim Ban",
     country: "Turkiye",
     city: "Ankara",
-    mail: "xcvxcvxc@google.com",
+    mail: "fhfgh@google.com",
+  },
+  {
+    fullname: "Selim San",
+    country: "Turkiye",
+    city: "Bursa",
+    mail: "asdfgfgh@google.com",
+  },
+  {
+    fullname: "Kasim Aralik",
+    country: "Turkiye",
+    city: "Izmir",
+    mail: "asdasd@google.com",
+  },
+  {
+    fullname: "Fatih",
+    country: "Litvanya",
+    city: "Vilnius",
+    mail: "kljkl@google.com",
   },
 ];

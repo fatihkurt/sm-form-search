@@ -27,7 +27,6 @@ export function useFormValidate(formValidations) {
     });
     const hasError = Object.keys(formErrors).length === 0;
     setErrors(formErrors);
-    console.log(formErrors);
     return hasError;
   }
 

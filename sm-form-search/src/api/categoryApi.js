@@ -33,4 +33,16 @@ const sampleData = [
   {
     name: "Laptops",
   },
+  {
+    name: "Shoes",
+  },
+  {
+    name: "Accessories",
+  },
+  {
+    name: "Electronics",
+  },
+  {
+    name: "Computers"
+  },
 ];
