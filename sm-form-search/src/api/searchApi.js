@@ -7,7 +7,7 @@ export default class SampleSearchApi {
   search(query) {
     query = query.toLowerCase();
     const users = this.userApi.getUsersDb();
-    const categories = this.categoryApi.getCategoriesDb();
+    const categories = this.categoryApi.getCategoryDb();
     const founds = [];
 
     users.forEach((user) => {
@@ -15,7 +15,7 @@ export default class SampleSearchApi {
         user.fullname.toLowerCase().includes(query) ||
         user.country.toLowerCase().includes(query) ||
         user.city.toLowerCase().includes(query) ||
-        user.email.toLowerCase().includes(query)
+        (user.email && user.email.toLowerCase().includes(query))
       ) {
         founds.push({ type: "user", data: user });
       }

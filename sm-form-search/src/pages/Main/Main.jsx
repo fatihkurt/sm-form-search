@@ -1,12 +1,31 @@
-import { Outlet, Link } from "react-router-dom";
+import {
+  createSearchParams,
+  Link,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
 import { SearchForm } from "../../sections";
 
 export default function Main() {
+  const navigate = useNavigate();
+
+  function handleSearch(term) {
+    navigate(
+      {
+        pathname: "search",
+        search: createSearchParams({
+          q: term,
+        }).toString(),
+      },
+      { replace: true }
+    );
+  }
+
   return (
     <>
       <div id="sidebar">
         <div>
-          <SearchForm />
+          <SearchForm onSearch={handleSearch} />
         </div>
         <nav>
           <ul>
