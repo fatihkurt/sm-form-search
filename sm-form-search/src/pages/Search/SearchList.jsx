@@ -27,7 +27,8 @@ export default function SearchList() {
 
   return (
     <>
-      <div id="search-list">
+      <h1>Search Result</h1>
+      <div className="search-list">
         {searchResult.map((item, idx) => (
           <SearchListItem key={idx} item={item} />
         ))}

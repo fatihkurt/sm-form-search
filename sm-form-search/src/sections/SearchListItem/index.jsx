@@ -1,3 +1,5 @@
+import './style.css';
+
 export default function SearchListItem(props) {
   const item = props.item;
 
